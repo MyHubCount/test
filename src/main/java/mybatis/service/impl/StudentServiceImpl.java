@@ -66,6 +66,72 @@ public class StudentServiceImpl {
     }
 
 
+//    //查询学生列表（初始化页面和查询时候调用此方法，支持模糊查询和分页）
+//    public PageInfo getStudentList(String name, String school, String grade, int offset, int limit) {
+//        int pageNum = offset / limit + 1;
+//        PageHelper.startPage(pageNum, limit);
+//
+//
+//        //定义一个键
+//        String key = "key";
+//        //定义一个值
+//        String value = (String) redisCache.get(key);
+//        //接受的集合
+//        List<Student> list;
+//        if (value == null || value.equals(" ")) {
+//            list = studentMapper.getStudentList(null, null, null);
+//            //将数据设置到缓存redis中
+//            redisCache.set(key, JSON.toJSONString(list));
+//        } else {
+//            list = JSON.parseArray(value, Student.class);
+//        }
+//        List<Student> newList = new ArrayList<>();
+//        for (int i = 0; i < list.size(); i++) {
+//            if (StringUtils.isNotBlank(name) || StringUtils.isNotBlank(school) || StringUtils.isNotBlank(grade)) {
+//                if (StringUtils.isNotBlank(name) && StringUtils.isNotBlank(school) && StringUtils.isNotBlank(grade)) {
+//                    if (list.get(i).getName().contains(name) && list.get(i).getSchool().equals(school) && list.get(i).getGrade().equals(grade)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if(StringUtils.isNotBlank(name) && StringUtils.isNotBlank(school) && StringUtils.isBlank(grade)) {
+//                    if (list.get(i).getName().contains(name) && list.get(i).getSchool().equals(school)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if (StringUtils.isNotBlank(name) && StringUtils.isBlank(school) && StringUtils.isNotBlank(grade)) {
+//                    if (list.get(i).getName().contains(name) && list.get(i).getGrade().equals(grade)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if (StringUtils.isNotBlank(school) && StringUtils.isNotBlank(grade)) {
+//                    if (list.get(i).getSchool().equals(school) && list.get(i).getGrade().equals(grade)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if (StringUtils.isNotBlank(grade)) {
+//                    if (list.get(i).getGrade().equals(grade)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if (StringUtils.isNotBlank(school)) {
+//                    if (list.get(i).getSchool().equals(school)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//                else  if (StringUtils.isNotBlank(name)) {
+//                    if (list.get(i).getName().contains(name)) {
+//                        newList.add(list.get(i));
+//                    }
+//                }
+//            }
+//        }
+//
+//        //封装到分页对象中
+//        PageInfo pageInfo = new PageInfo<>(newList);
+//        return pageInfo;
+//    }
+    
+
     //查询学生列表（初始化页面和查询时候调用此方法，支持模糊查询和分页）
     public PageInfo getStudentList(String name, String school, String grade, int offset, int limit) {
 
