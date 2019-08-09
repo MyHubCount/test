@@ -341,7 +341,7 @@ TableInit = function () {
             limit: params.limit,   //页面大小
             offset: params.offset,
             name: $(".search input[ name='name']").val(),
-            school: $(".search input[ name='school']").val(),
+            school: $(".search input[ name='school2019']").val(),
             grade: $("#selectQuery").val()
         };
         return temp;
