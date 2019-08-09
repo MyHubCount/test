@@ -20,7 +20,7 @@
             <if test="school != null">
                 and school like CONCAT('%',#{school},'%')
             </if>
-            <if test="grade != 0">
+            <if test="grade != 0 and grade!=null" >
                 and grade =#{grade}
             </if>
         </where>
