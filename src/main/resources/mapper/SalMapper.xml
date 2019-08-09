@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.dao.SaleMapper">
+
+    <select id="get" resultType="java.util.Map">
+     SELECT
+	t.n,
+	t.`员工姓名`,
+	t.`所属部门`,
+	a.`销售张数`,
+	a.`销售金额`
+FROM
+	(
+		SELECT
+			t_user.id n,
+			t_user.username 员工姓名,
+			t_department. NAME 所属部门
+		FROM
+			test
+		LEFT JOIN t_user ON test.id = t_user.id
+		LEFT JOIN t_department ON t_user.id = t_department.`code`
+		GROUP BY
+			n
+	) t
+RIGHT JOIN (
+	SELECT
+		t_user.id q,
+		count(test.id) 销售张数,
+		sum(money) 销售金额
+	FROM
+		test
+	LEFT JOIN t_user ON test.id = t_user.id
+	LEFT JOIN t_department ON t_user.id = t_department.`code`
+	GROUP BY
+		t_user.id WITH ROLLUP
+) a ON a.q = t.n;
+    </select>
+
+
+</mapper>

@@ -1,0 +1,209 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <!-- 引入的js -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/bootbox.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- 引入的css -->
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-table.css" rel="stylesheet"/>
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-theme.css" rel="stylesheet"/>
+
+    <style type="text/css">
+        /*table tr td{*/
+            /*border: 0px solid transparent !important;*/
+        /*}*/
+    </style>
+</head>
+
+<body>
+<div>
+    <div>
+        销售日期<label><input type="text" name="startTime" placeholder="请选择日期"/></label>-
+        <label><input type="text" name="endTime" placeholder="请选择日期"/></label>
+        <label><input type="text" name="empName" placeholder="员工工号/姓名"/></label>
+        <label><input type="text" name="department"/></label>
+        <input type="button" name="serach" value="查询"/>
+        <input type="button" name="reset" value="重置"/>
+    </div>
+    <div id="export"></div>
+    <div style="margin-left: 5%;margin-right: 5%;width: 85%">
+        <table id="table"></table>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(function () {
+        count();
+    })
+
+    //初始化Table
+    function count() {
+        $('#table').bootstrapTable({
+            url: '/count_passenger/list',         //请求后台的URL（*）
+            method: 'get',                      //请求方式（*）
+            striped: true,                      //是否显示行间隔色
+            contentType: "application/x-www-form-urlencoded",
+            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,                   //是否显示分页（*）
+            sortable: false,                     //是否启用排序
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
+            pageNumber: 1,                       //初始化加载第一页，默认第一页
+            pageSize: 10,                       //每页的记录行数（*）
+            pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+            showColumns: false,                  //是否显示所有的列
+            minimumCountColumns: 2,             //最少允许的列数
+            //   clickToSelect: true,                //是否启用点击选中行
+            height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            showToggle: false,                    //是否显示详细视图和列表视图的切换按钮
+            cardView: false,                    //是否显示详细视图
+            detailView: false,                   //是否显示父子表
+            showExport: true,                     //是否显示导出
+            exportDataType: "all",                //basic', 'all', 'selected'.
+            columns: [
+                [
+                    {
+                        field: 'date', title: "销售日期", valign: "middle", align: "center", colspan: 1, rowspan: 2,
+                        formatter: function (v) {
+                            if (v == "" || v == null) {
+                                return "合计";
+                            } else {
+                                return v;
+                            }
+                        }
+                    },
+                    {title: "无成人陪伴儿童", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "小动物托运", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "担架旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "婴儿摇篮", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "轮椅旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "VIP旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "VVIP旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "军残旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1},
+                    {title: "警残旅客", valign: "middle", align: "center", colspan: 2, rowspan: 1}
+
+                ],
+                [
+                    {
+                        field: 'a', title: "人数", align: "center", formatter: function (v) {
+                            if (v == "" || v == null) {
+                                return "合计";
+                            } else {
+                                return v;
+                            }
+                        }
+                    },
+                    {
+                        field: 'b', title: "金额", align: "center", formatter: function (v) {
+                            if (v == "" || v == null) {
+                                return "合计";
+                            } else {
+                                return v;
+                            }
+                        }
+                    },
+                    {
+                        field: 'c', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'd', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'e', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'f', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'g', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'h', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'i', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'j', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'k', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'l', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'm', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {field: 'n', title: "金额", align: "center"},
+                    {
+                        field: 'o', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'p', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                    {
+                        field: 'q', title: "人数", align: "center", formatter: function (v) {
+                            return v + "人"
+                        }
+                    },
+                    {
+                        field: 'r', title: "金额", align: "center", formatter: function (v) {
+                            return v + ".00"
+                        }
+                    },
+                ],
+                // [
+                //     {field: 'date', title: "销售日期1", valign: "middle", align: "center"},
+                //     {field: 'a', title: "无成人陪伴儿童", valign: "middle", align: "center"},
+                //     {field: 'b', title: "小动物托运", valign: "middle", align: "center"},
+                //     {field: 'c', title: "担架旅客", valign: "middle", align: "center"},
+                //     {field: 'd', title: "婴儿摇篮", valign: "middle", align: "center"},
+                //     {field: 'e', title: "轮椅旅客", valign: "middle", align: "center"},
+                //     {field: 'f', title: "VIP旅客", valign: "middle", align: "center"},
+                //     {field: 'g', title: "VVIP旅客", valign: "middle", align: "center"},
+                //     {field: 'h', title: "军残旅客", valign: "middle", align: "center"},
+                //     {field: 'i', title: "警残旅客", valign: "middle", align: "center"}
+                //
+                // ]
+
+            ]
+        });
+    }
+</script>

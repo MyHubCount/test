@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试 员工&部门销售数据统计列表</title>
+
+    <!-- 引入的js -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/bootbox.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- 引入的css -->
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-table.css" rel="stylesheet"/>
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-theme.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+<div style="margin-left: 5%;margin-right: 5%;width: 85%">
+    <table id="table"></table>
+</div>
+
+
+<script>
+
+
+    $(function () {
+        count();
+    })
+
+    //初始化Table
+    function count() {
+        console.log("进入此方法");
+        $('#table').bootstrapTable({
+            url: '/sale/list',         //请求后台的URL（*）
+            method: 'get',                      //请求方式（*）
+            striped: true,                      //是否显示行间隔色
+            contentType: "application/x-www-form-urlencoded",
+            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,                   //是否显示分页（*）
+            sortable: false,                     //是否启用排序
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*）
+            pageNumber: 1,                       //初始化加载第一页，默认第一页
+            pageSize: 10,                       //每页的记录行数（*）
+            pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+            showColumns: false,                  //是否显示所有的列
+            minimumCountColumns: 2,             //最少允许的列数
+            //   clickToSelect: true,                //是否启用点击选中行
+            height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            showToggle: false,                    //是否显示详细视图和列表视图的切换按钮
+            cardView: false,                    //是否显示详细视图
+            detailView: false,                   //是否显示父子表
+            showExport: true,                     //是否显示导出
+            exportDataType: "all",                //basic', 'all', 'selected'.
+            columns: [
+
+                {
+                    field: 'n', title: "员工工号", valign: "middle", align: "center", colspan: 1, rowspan: 1
+                    , formatter: function (v) {
+                        if (v == null) {
+                            return "";
+                        } else {
+                            return v;
+                        }
+                    }
+                },
+                {
+                    field: '员工姓名', title: "员工姓名", align: "center", formatter: function (v) {
+                        if (v == null) {
+                            return "";
+                        } else {
+                            return v;
+                        }
+                    }
+                },
+                {
+                    field: '所属部门', title: "所属部门", align: "center", formatter: function (v) {
+                        if (v == null) {
+                            return "合计"
+                        } else {
+                            return v;
+                        }
+                    }
+                },
+                {
+                    field: '销售张数', title: "销售张数", align: "center", formatter: function (v) {
+                        return v + "人"
+                    }
+                },
+                {
+                    field: '销售金额', title: "销售金额", align: "center", formatter: function (v) {
+                        return v + "元"
+                    }
+                }
+
+            ]
+
+        });
+    }
+
+
+</script>
+
+
+</body>
+</html>

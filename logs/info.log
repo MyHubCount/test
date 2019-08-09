@@ -1,0 +1,112 @@
+12:16:13.421 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 20728 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:16:13.424 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:16:13.609 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:16:14.442 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:16:14.443 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:16:14.518 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:16:15.440 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:16:15.447 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:16:15.455 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:16:15.468 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.274 seconds (JVM running for 2.703)
+12:16:36.703 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 4236 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:16:36.706 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:16:36.894 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:16:37.785 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:16:37.786 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:16:37.859 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:16:38.774 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:16:38.782 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:16:38.790 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:16:38.803 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.312 seconds (JVM running for 2.744)
+12:17:24.153 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 17184 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:17:24.155 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:17:24.337 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:17:25.226 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:17:25.227 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:17:25.307 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:17:26.287 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:17:26.296 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:17:26.303 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:17:26.317 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.368 seconds (JVM running for 2.851)
+12:17:37.239 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 452 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:17:37.242 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:17:37.424 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:17:38.313 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:17:38.314 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:17:38.389 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:17:39.352 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:17:39.362 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:17:39.371 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:17:39.392 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.363 seconds (JVM running for 2.792)
+12:39:50.495 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 14868 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:39:50.498 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:39:50.678 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:39:51.565 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:39:51.565 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:39:51.635 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:39:52.492 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:39:52.499 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:39:52.507 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:39:52.521 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.239 seconds (JVM running for 2.688)
+12:39:56.972 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+12:39:57.063 [http-nio-8090-exec-4] INFO  mybatis.controller.StudentController - 接收到数据：->0
+12:41:37.584 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 15912 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+12:41:37.588 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+12:41:37.778 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+12:41:38.708 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+12:41:38.709 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+12:41:38.797 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:41:39.964 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+12:41:39.973 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+12:41:39.985 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+12:41:40.001 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.706 seconds (JVM running for 3.212)
+12:41:44.563 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+12:41:44.635 [http-nio-8090-exec-2] INFO  mybatis.LogExampleOther - 接收到数据：->0
+15:24:48.994 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 21328 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+15:24:48.997 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+15:24:49.212 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+15:24:50.119 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:24:50.120 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:24:50.205 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:24:51.206 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+15:24:51.213 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+15:24:51.221 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:24:51.235 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.484 seconds (JVM running for 2.953)
+15:25:05.865 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:25:05.908 [http-nio-8090-exec-1] INFO  mybatis.LogExampleOther - 接收到数据：->0
+15:29:25.422 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 19552 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+15:29:25.432 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+15:29:25.640 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+15:29:26.633 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:29:26.634 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:29:26.735 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:29:27.850 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+15:29:27.860 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+15:29:27.871 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:29:27.889 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.755 seconds (JVM running for 3.276)
+15:29:31.952 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:29:32.032 [http-nio-8090-exec-3] INFO  mybatis.LogExampleOther - 接收到数据：->0
+15:32:13.660 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 3944 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+15:32:13.668 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+15:32:13.873 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+15:32:14.837 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:32:14.838 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:32:14.925 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:32:16.025 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+15:32:16.035 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+15:32:16.045 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:32:16.061 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.684 seconds (JVM running for 3.188)
+15:32:20.436 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:32:20.515 [http-nio-8090-exec-2] INFO  mybatis.LogExampleOther - 接收到数据：->0
+15:33:02.058 [main] INFO  mybatis.SpringbootMybatisApplication - Starting SpringbootMybatisApplication on DESKTOP-3UH2LUL with PID 2080 (D:\workspace(luna)\springbootDemo\target\classes started by dell in D:\workspace(luna)\springbootDemo)
+15:33:02.068 [main] INFO  mybatis.SpringbootMybatisApplication - No active profile set, falling back to default profiles: default
+15:33:02.296 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+15:33:03.327 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:33:03.327 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:33:03.416 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:33:04.552 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+15:33:04.561 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+15:33:04.571 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:33:04.594 [main] INFO  mybatis.SpringbootMybatisApplication - Started SpringbootMybatisApplication in 2.826 seconds (JVM running for 3.327)
+15:33:08.266 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:33:08.334 [http-nio-8090-exec-2] INFO  mybatis.LogExampleOther - 接收到数据：->0

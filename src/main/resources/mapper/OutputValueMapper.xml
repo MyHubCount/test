@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.dao.OutputValueMapper" >
+  <resultMap id="BaseResultMap" type="mybatis.bean.OutputValue" >
+    <result column="ov_id" property="ovId" jdbcType="VARCHAR" />
+    <result column="pro_id" property="proId" jdbcType="VARCHAR" />
+    <result column="ov_time" property="ovTime" jdbcType="DATE" />
+    <result column="reality_output_value" property="realityOutputValue" jdbcType="INTEGER" />
+    <result column="expect_output_value" property="expectOutputValue" jdbcType="INTEGER" />
+    <result column="reality_schedule" property="realitySchedule" jdbcType="INTEGER" />
+    <result column="expect_schedule" property="expectSchedule" jdbcType="INTEGER" />
+  </resultMap>
+
+
+
+  <select id="selectMonth" resultType="String">
+    SELECT
+	substring(o.ov_time, 6, 2) as ov_time
+FROM
+	`output_value` as o
+where o.pro_id=#{proId}
+GROUP BY
+substring(o.ov_time, 6, 2)
+  </select>
+
+<select id="selectRelSchedule"  resultType="Integer">
+SELECT
+  o.reality_schedule
+FROM
+	`output_value` as o
+where o.pro_id=#{proId}
+GROUP BY
+substring(o.ov_time, 6, 2)
+</select>
+
+<select id="selectExpSchedule" resultType="Integer">
+SELECT
+  o.expect_schedule
+FROM
+	`output_value` as o
+where o.pro_id=#{proId}
+GROUP BY
+substring(o.ov_time, 6, 2)
+</select>
+
+
+
+</mapper>

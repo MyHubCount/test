@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+ <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+ <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<h1>测试搭建的首页</h1>
+<div class="container-fluid" style="background-color: plum;">
+
+			container-fluid: 用于 100% 宽度，占据全部视口（viewport）的容器
+
+			<div class="container" style="border: 1px solid blue;background-color: yellow;">
+
+				container:用于固定宽度并支持响应式布局的容器
+
+				<!--创建行级单位的层-->
+				<div class="row" style="border: 1px solid greenyellow;">
+
+					<!--创建用于存放表单的层 -->
+
+					<div class="col-xs-6">
+
+						<form class="form-inline">
+							<!--control-label：设置表单控件的提示文字-->
+							<label class="control-label">用户名：</label>
+							<!--form-control：默认设置宽度属性为 width: 100%;-->
+							<input class="form-control" type="text" name="txtName" />
+
+							<label class="control-label">密码：</label>
+							<input class="form-control" type="password" name="pass" />
+
+							<input class="btn btn-primary " type="button" value="登陆" />
+
+						</form>
+
+					</div>
+
+					
+
+				</div>
+
+			</div>
+		</div>
+
+<ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+</ul>
+
+
+</body>
+</html>

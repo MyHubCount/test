@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单个项目防范数量折线图</title>
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
+</head>
+<body>
+
+<h1>单个项目防范数量折线图</h1>
+
+<div id="main2" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+
+    function showChart(date,seriesData){
+        var myChart = echarts.init(document.getElementById('main2'));
+        var option = {
+            title: {
+                text: '单个项目防范数量折线图'
+            },
+            tooltip: {},
+            legend: {
+                data: ['设备利用率']
+            },
+            xAxis: {
+                name: '(月份)',
+                type: 'category',
+                boundaryGap: true,
+                axisTick: {
+                    alignWithLable: true
+                },
+                data: date
+            },
+            yAxis: {
+                name: '次数',
+                type: 'value',
+                minInterval: true
+            },
+            series: seriesData
+        };
+        myChart.setOption(option)
+    }
+    $(document).ready(function(){
+        initEchart();
+        function initEchart() {
+            $.ajax({
+                url : "/echart/echart2",
+                type: 'POST',
+                traditional:true,
+                dataType:"json",
+                data : {
+                    proId:1,
+                    manualId:[1,2]　　　　　　　　
+                },
+                success: function(result) {
+                    var date=result.months
+                    var chartDate=result.datelist;
+                    var chartDateList=result.manualIdCounts;
+                    var seriesData = [];
+                    seriesData.push({
+                        name: '单个项目防范数量折线图',
+                        type: 'line',
+                        symbol: 'rect',
+                        symbolSize: '12',
+                        data: chartDate
+                    });
+                    for(var i = 0;i<chartDateList.length;i++){
+                        seriesData.push({
+                            name: '单个项目防范数量折线图2',
+                            type: 'line',
+                            symbol: 'rect',
+                            symbolSize: '12',
+                            data: chartDateList[i].viewData
+                        });
+                    }
+                    //将参数放到方法中，渲染出来
+                    showChart(date,seriesData);
+                }
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

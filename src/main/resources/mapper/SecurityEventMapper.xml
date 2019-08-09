@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.dao.SecurityEventMapper" >
+<!--  <resultMap id="BaseResultMap" type="mybatis.bean.SecurityEvent" >-->
+<!--    <result column="ID" property="id" jdbcType="VARCHAR" />-->
+<!--    <result column="pro_id" property="proId" jdbcType="VARCHAR" />-->
+<!--    <result column="manual_id" property="manualId" jdbcType="INTEGER" />-->
+<!--    <result column="manual_name" property="manualName" jdbcType="VARCHAR" />-->
+<!--    <result column="security_locale" property="securityLocale" jdbcType="VARCHAR" />-->
+<!--    <result column="security_operator" property="securityOperator" jdbcType="VARCHAR" />-->
+<!--    <result column="assignment_content" property="assignmentContent" jdbcType="VARCHAR" />-->
+<!--    <result column="gps_coordinate" property="gpsCoordinate" jdbcType="VARCHAR" />-->
+<!--    <result column="create_time" property="createTime" jdbcType="DATE" />-->
+<!--    <result column="create_user" property="createUser" jdbcType="VARCHAR" />-->
+<!--    <result column="complete_status" property="completeStatus" jdbcType="BIT" />-->
+<!--    <result column="assignment_time" property="assignmentTime" jdbcType="DATE" />-->
+<!--  </resultMap>-->
+
+
+
+	<select id="selectOneById" resultType="Integer">
+		SELECT
+	count(manual_id) AS 'totalTimes'
+FROM
+	`security_event` AS s
+WHERE
+	s.pro_id = #{proId}
+and s.manual_id=#{manualId}
+GROUP BY
+	substring(s.assignment_time, 6, 2)
+	</select>
+
+
+
+
+  <select id="echart2" resultType="Integer">
+    SELECT
+	count(manual_id) AS 'totalTimes'
+FROM
+	`security_event` AS s
+WHERE
+	s.pro_id = #{proId}
+GROUP BY
+	substring(s.assignment_time, 6, 2)
+  </select>
+
+
+	<select id="selectMonth" resultType="String">
+       SELECT
+	substring(s.assignment_time, 6, 2) as assignment_time
+FROM
+	`security_event` AS s
+WHERE
+	s.pro_id = #{id}
+GROUP BY
+	substring(s.assignment_time, 6, 2)
+    </select>
+
+<select id="selectCount" resultType="mybatis.bean.CountMonth">
+		SELECT
+	count(manual_id) as mcount,
+  substring(s.assignment_time, 6, 2) as mmonth
+FROM
+	`security_event` AS s
+WHERE
+	s.pro_id = #{proId}
+and s.manual_id=#{manualId}
+GROUP BY
+	substring(s.assignment_time, 6, 2)
+</select>
+
+
+</mapper>

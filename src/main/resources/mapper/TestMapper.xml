@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.dao.TestMapper">
+    <select id="get" resultType="java.util.Map">
+select date,
+sum(case when type = '无成人陪伴儿童' then 1 else 0 end)a,
+sum(case when type='无成人陪伴儿童' then money else 0 end)b,
+sum(case when type = '小动物托运' then 1 else 0 end)c,
+sum(case when type='小动物托运' then money else 0 end) d,
+sum(case when type = '担架旅客' then 1 else 0 end) e,
+sum(case when type='担架旅客' then money else 0 end)f,
+sum(case when type = '婴儿摇篮' then 1 else 0 end)g,
+sum(case when type='婴儿摇篮' then money else 0 end)h,
+sum(case when type = '轮椅旅客' then 1 else 0 end)i,
+sum(case when type='轮椅旅客' then money else 0 end)j,
+sum(case when type = 'VIP旅客' then 1 else 0 end)k,
+sum(case when type='VIP旅客' then money else 0 end)l,
+sum(case when type = 'VVIP旅客' then 1 else 0 end)m,
+sum(case when type='VVIP旅客' then money else 0 end)n,
+sum(case when type = '军残旅客' then 1 else 0 end)o,
+sum(case when type='军残旅客' then money else 0 end)p,
+sum(case when type = '警残旅客' then 1 else 0 end)q,
+sum(case when type='警残旅客' then money else 0 end)r
+from test group by date
+with ROLLUP
+  </select>
+    <!--<select id="get1" resultType="java.util.Map">-->
+<!--select date,-->
+ <!--concat(sum(case when type = '无成人陪伴儿童' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='无成人陪伴儿童' then money else 0 end))as 'a' ,-->
+ <!--concat(sum(case when type = '小动物托运' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='小动物托运' then money else 0 end)) as 'b' ,-->
+ <!--concat(sum(case when type = '担架旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='担架旅客' then money else 0 end)) as 'c' ,-->
+ <!--concat(sum(case when type = '婴儿摇篮' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='婴儿摇篮' then money else 0 end))as 'd' ,-->
+ <!--concat(sum(case when type = '轮椅旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='轮椅旅客' then money else 0 end))as 'e' ,-->
+ <!--concat(sum(case when type = 'VIP旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='VIP旅客' then money else 0 end))as 'f' ,-->
+ <!--concat(sum(case when type = 'VVIP旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='VVIP旅客' then money else 0 end))as 'g' ,-->
+ <!--concat(sum(case when type = '军残旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='军残旅客' then money else 0 end))as 'h' ,-->
+ <!--concat(sum(case when type = '警残旅客' then 1 else 0 end),"人   ",-->
+<!--sum(case when type='警残旅客' then money else 0 end))as 'i'-->
+<!--from test group by date-->
+<!--with ROLLUP-->
+  <!--</select>-->
+</mapper>

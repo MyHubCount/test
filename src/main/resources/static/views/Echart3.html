@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度折线图</title>
+
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
+
+
+</head>
+<body>
+<h1>进度折线图</h1>
+
+<div id="main2" style="width: 600px;height:400px;"></div>
+
+
+<script type="text/javascript">
+
+    function showChart(date,chartDate,chartDate2){
+        var myChart = echarts.init(document.getElementById('main2'));
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['进度']
+            },
+            xAxis: {
+                name: '(月份)',
+                type: 'category',
+                boundaryGap: true,
+                axisTick: {
+                    alignWithLable: true
+                },
+                data: date
+            },
+            yAxis: {
+                name: '(百分比)',
+                type: 'value',
+                minInterval: true
+            },
+            series: [{
+                name: '进度折线图',
+                type: 'line',
+                symbol: 'rect',
+                symbolSize: '12',
+                data: chartDate
+            },{
+                name: '进度折线图2',
+                type: 'line',
+                symbol: 'rect',
+                symbolSize: '12',
+                data: chartDate2
+            }]
+        };
+        myChart.setOption(option)
+    }
+
+
+    $(document).ready(function(){
+        initEchart();
+        function initEchart() {
+            $.ajax({
+                url: "/echart/echart3?proId="+1,
+                type: "post",
+                contentType: "application/json",
+                dataType:'json',
+                cahce:false,
+                success : function (result) {
+                    var date=result.months
+                    var chartDate=result.RelSchedule;
+                    var chartDate2=result.ExpSchedule;
+                    //将参数放到方法中，渲染出来
+                    showChart(date,chartDate,chartDate2);
+                }
+            });
+
+
+        }
+    });
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

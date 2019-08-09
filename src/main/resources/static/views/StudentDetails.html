@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生详情页面</title>
+    <!-- 引入的js -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/bootbox.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="../js/student.js"></script>
+    <!-- 引入的css -->
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-table.css" rel="stylesheet"/>
+    <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-theme.css" rel="stylesheet"/>
+
+
+    <style type="text/css">
+        .btn-danger {
+            margin: 10px 5px;
+        }
+        .label_width {
+            width: 70px;
+            text-align: justify;
+            line-height: 40px;
+            font-weight:normal;
+        }
+        .help-block {
+            display: none;
+        }
+        .search{
+            margin: 0px 0px 10px 0px;
+        }
+
+        .showMsg {
+            position: absolute;
+            right: 20px;
+            top: 80%;
+        }
+        .msgtxt {
+            display: block;
+            color: white;
+            background-color: #37BC9B;
+            text-align: right;
+            margin-top: 5px;
+            padding: 15px;
+            border: 1px solid #eed3d7;
+            border-radius: 4px;
+            float: right;
+            clear: right;
+        }
+    </style>
+
+
+
+
+</head>
+
+
+
+<body>
+
+<h1>学生详情页面</h1>
+
+<form method="post" enctype="multipart/form-data">
+
+    Username: <input type="text" name="username"/><br/>
+
+    File:<input type="file" name="file"/><br/>
+
+    <input type="submit" value="提交"/>
+
+</form>
+
+
+<script>
+    $(function(){
+
+      alert("初始化页面");
+        $.ajax({
+            url: "/student/update",
+            type: "post",
+            data: json,
+            contentType: "application/json",
+            success: function (result) {
+
+            }
+        });
+
+
+    });
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

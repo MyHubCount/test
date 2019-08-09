@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>查询列表页面</title>
+
+ <!-- 引入的js -->
+ <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="../js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+ <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+ <!-- 引入的css -->
+ <link href="../js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="../js/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container">
+<h1>查询列表页</h1>
+    <div class="row">
+        
+        <div class="col-md-10" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <!-- 查询表单 -->                
+           <form class="form-horizontal" role="form" id="form-horizontal">   
+             <div class="form-group">
+                <label for="firstname" class="col-md-2 control-label">请输入查询文字</label>
+             <div class="col-md-4">
+             <input type="text" class="form-control" id="firstname" placeholder="请输入名字" name="name">
+            </div>
+
+                 <div>
+                     <select id="accountId" name ="accountId" class="form-control m-b">
+
+                     </select>
+
+
+                     <!--<select class="form-control" name="accountId">-->
+                         <!--<option value="">用户姓名</option>-->
+                         <!--<option name="optId" value="">1</option>-->
+                         <!--<option name="optId" value="">11</option>-->
+                         <!--<option name="optId" value="">111</option>-->
+                     <!--</select>-->
+                 </div>
+                 <div class="col-md-2">
+                     <button type="button" class="btn btn-default" id="butId">搜索</button>
+                     <button type="button" class="btn btn-default" id="butId2">点击</button>
+                 </div>
+        </div>
+           </form>   
+      <div>
+          <button id="js-export" type="button" class="btn btn-primary">导出Excel</button>
+      </div>
+  <table class="table">
+  <caption>上下文表格布局</caption>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>收入</th></tr>
+  </thead>
+  <tbody>
+    <tr class="active">
+    <tr class="success">
+    <tr class="warning">
+    <tr class="danger">
+  </tbody>
+</table>
+   <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li class="disabled"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+</ul>        
+           
+           
+             
+          
+                       
+        </div>
+        <div class="col-md-2" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                         边框
+        </div>
+    </div>
+</div>
+<script>
+    $('#js-export').click(function(){
+        alert("显示表格");
+        window.location.href="/ReportForm/export";
+    //    window.location.href="/report/exportBooksTable.do;
+    });
+
+
+// $(function(){
+//
+//     getGrouptype();
+//
+//
+//     })
+
+  $("#butId2").click(function () {
+
+      alert("123");
+      $.ajax({
+          url:'/web/Account/list',
+          type:"POST",
+          dataType:"json",
+          success:function(result){
+
+              alert(result.accounts);
+              // $("#"+selectid).find("option").remove();
+              // $.each(rtx, function (n, value) {
+              //     $("#"+selectid).append("<option value='"+value.code+"'>"+value.name+"</option>");
+              // });
+          }
+
+  })
+
+	
+	$('#butId').click(function(){
+		
+		var id =$("#firstname").val();
+	
+	  // var data=$("#form-horizontal").serializeObject();
+		alert(id);
+        $.get("/web/Account/findOne/"+id,function(result){
+            alert(result.name);
+        });
+
+	 	// $.ajax({
+			//   type: 'GET',
+			//   url: '/web/Account/findOne/'+id,
+			//   dataType: 'json',
+			//   success: function(result){
+			//
+			// 	  alert(result.name);
+			//
+			//     }
+			//
+			// });
+		
+		
+	})
+	
+	
+})
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

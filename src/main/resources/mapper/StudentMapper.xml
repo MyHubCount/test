@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.dao.StudentMapper">
+    <resultMap id="BaseResultMap" type="mybatis.bean.Student">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="sex" property="sex" jdbcType="VARCHAR"/>
+        <result column="school" property="school" jdbcType="VARCHAR"/>
+        <result column="grade" property="grade" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="getStudentList" resultMap="BaseResultMap">
+        select * from student
+        <where>
+            <if test="name != null">
+                name like CONCAT('%',#{name},'%')
+            </if>
+            <if test="school != null">
+                and school like CONCAT('%',#{school},'%')
+            </if>
+            <if test="grade != 0">
+                and grade =#{grade}
+            </if>
+        </where>
+        order by id asc
+    </select>
+
+    <select id="getUserListForPop" resultMap="BaseResultMap">
+        select *  from student
+
+        order  by id asc
+    </select>
+
+
+    <select id="selectStudentById" resultMap="BaseResultMap">
+  select * from student
+
+</select>
+
+
+    <select id="">
+
+
+    </select>
+
+    <!--<select id="selectStudentById"  resultMap="BaseResultMap">-->
+    <!--select * from student-->
+    <!--where id=#{id};-->
+    <!--</select>-->
+    <insert id="addStudent" parameterType="mybatis.bean.Student" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO student (
+		id,
+		`name`,
+		age,
+		sex,
+		school,
+		grade,
+		`count`
+		)
+		VALUES
+		(
+		#{id},
+		#{name},
+		#{age},
+		#{sex},
+		#{school},
+		#{grade},
+		     #{count}
+		)
+	</insert>
+
+    <update id="updateStudent" parameterType="mybatis.bean.Student">
+    update student set id=#{id},name=#{name},age=#{age},sex=#{sex},school=#{school},grade=#{grade},count=#{count}
+		where id=#{id}
+</update>
+
+
+    <update id="updateSex">
+    update student set sex=#{sex}
+        where id=#{id}
+		<!--<where>-->
+            <!--id-->
+        <!--<foreach  collection="array" item="array" open="in (" close=")" separator=",">-->
+        <!--#{array}-->
+       <!--</foreach>-->
+        <!--</where>-->
+    </update>
+
+
+</mapper>
