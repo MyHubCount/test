@@ -130,17 +130,17 @@ public class StudentServiceImpl {
             studentMapper.updateSex(id, sex);
         }
 
-        //更新操作过后，重新设置缓存
-        //定义一个键
-        String key = "key";
-        //定义一个值
-        String value = (String) redisCache.get(key);
-        //接受的集合
-        List<Student> list;
-
-        list = studentMapper.getStudentList(null, null, null);
-        //将数据设置到缓存redis中
-        redisCache.set(key, JSON.toJSONString(list));
+//        //更新操作过后，重新设置缓存
+//        //定义一个键
+//        String key = "key";
+//        //定义一个值
+//        String value = (String) redisCache.get(key);
+//        //接受的集合
+//        List<Student> list;
+//
+//        list = studentMapper.getStudentList(null, null, null);
+//        //将数据设置到缓存redis中
+//        redisCache.set(key, JSON.toJSONString(list));
 
     }
 

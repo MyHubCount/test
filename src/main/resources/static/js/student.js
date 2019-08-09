@@ -74,6 +74,7 @@ $(function () {
             type: "get",
             contentType: "application/json",
             success: function (result) {
+                $("#personModa3").modal("hide");
 
             }
         });
@@ -124,7 +125,7 @@ $(function () {
     /**
      * 新增or修改的提交
      */
-    $(".commitOK").click(function () {
+    $("#button2019").click(function () {
         var data = $(".userForm").serialize();
         var DataDeal = {
             //将从form中通过$('#form').serialize()获取的值转成json
