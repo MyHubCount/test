@@ -73,23 +73,23 @@ public class StudentServiceImpl {
         PageHelper.startPage(pageNum, limit);
 
         //定义一个键
-        String key = "key";
-        //定义一个值
-        String value = (String) redisCache.get(key);
-        //接受的集合
-        List<Student> list;
-        if (value == null || value.equals(" ")) {
-            list = studentMapper.getStudentList(name, school, grade);
-            //将数据设置到缓存redis中
-            redisCache.set(key, JSON.toJSONString(list));
-        } else {
-            list = JSON.parseArray(value, Student.class);
-        }
+//        String key = "key";
+//        //定义一个值
+//        String value = (String) redisCache.get(key);
+//        //接受的集合
+//        List<Student> list;
+//        if (value == null || value.equals(" ")) {
+//            list = studentMapper.getStudentList(name, school, grade);
+//            //将数据设置到缓存redis中
+//            redisCache.set(key, JSON.toJSONString(list));
+//        } else {
+//            list = JSON.parseArray(value, Student.class);
+//        }
 
 
         //封装到分页对象中
-//        List<Student> list;
-//        list = studentMapper.getStudentList(name, school, grade);
+        List<Student> list;
+        list = studentMapper.getStudentList(name, school, grade);
         PageInfo pageInfo = new PageInfo<>(list);
         return pageInfo;
 
