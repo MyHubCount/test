@@ -133,32 +133,46 @@ public class StudentServiceImpl {
     
 
     //查询学生列表（初始化页面和查询时候调用此方法，支持模糊查询和分页）
-    public PageInfo getStudentList(String name, String school, String grade, int offset, int limit) {
+    public Map getStudentList(String name, String school, String grade, int offset, int limit) {
 
         int pageNum = offset / limit + 1;
-        PageHelper.startPage(pageNum, limit);
 
         //定义一个键
-//        String key = "key";
-//        //定义一个值
-//        String value = (String) redisCache.get(key);
-//        //接受的集合
-//        List<Student> list;
-//        if (value == null || value.equals(" ")) {
-//            list = studentMapper.getStudentList(name, school, grade);
-//            //将数据设置到缓存redis中
-//            redisCache.set(key, JSON.toJSONString(list));
-//        } else {
-//            list = JSON.parseArray(value, Student.class);
-//        }
-
-
-        //封装到分页对象中
+        String key = "key";
+        //定义一个值
+        String value = (String) redisCache.get(key);
+        //接受的集合
         List<Student> list;
-        list = studentMapper.getStudentList(name, school, grade);
-        PageInfo pageInfo = new PageInfo<>(list);
-        return pageInfo;
-
+        if (value == null || value.equals(" ")) {
+            list = studentMapper.getStudentList(name, school, grade);
+            //将数据设置到缓存redis中
+            redisCache.set(key, JSON.toJSONString(list));
+        } else {
+            list = JSON.parseArray(value, Student.class);
+        }
+        int total = list.size();
+      int totalPage = total % limit == 0 ? (total / limit) : (total / limit + 1);
+        // 从第几条数据开始
+        int firstIndex = 0;
+        // 到第几条数据结束
+        int lastIndex = 0;
+        if (pageNum <= totalPage && pageNum != 0) {
+            firstIndex = (pageNum - 1) * limit;
+            if (pageNum == totalPage) {
+                lastIndex = list.size();
+            } else {
+                lastIndex = pageNum * limit;
+            }
+        }
+        list = list.subList(firstIndex, lastIndex);
+        //封装到分页对象中
+        Map map = new HashMap();
+        map.put("pageNo",pageNum);
+        map.put("pageSize",limit);
+        map.put("data",list);
+        map.put("total",total);
+        map.put("totalPage", totalPage);
+        return map;
     }
 
 
@@ -196,17 +210,17 @@ public class StudentServiceImpl {
             studentMapper.updateSex(id, sex);
         }
 
-//        //更新操作过后，重新设置缓存
-//        //定义一个键
-//        String key = "key";
-//        //定义一个值
-//        String value = (String) redisCache.get(key);
-//        //接受的集合
-//        List<Student> list;
-//
-//        list = studentMapper.getStudentList(null, null, null);
-//        //将数据设置到缓存redis中
-//        redisCache.set(key, JSON.toJSONString(list));
+        //更新操作过后，重新设置缓存
+        //定义一个键
+        String key = "key";
+        //定义一个值
+        String value = (String) redisCache.get(key);
+        //接受的集合
+        List<Student> list;
+
+        list = studentMapper.getStudentList(null, null, null);
+        //将数据设置到缓存redis中
+        redisCache.set(key, JSON.toJSONString(list));
 
     }
 

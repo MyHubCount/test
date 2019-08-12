@@ -51,9 +51,9 @@ private  StudentServiceImpl StudentServiceImpl;
         log.info("接收到数据：" + name + "->" + grade);
        System.out.print("获取前台传来的下拉框的值"+grade);
         Map<String, Object> result = new HashMap<>();
-        PageInfo roleInfo = StudentServiceImpl.getStudentList(name,school,grade,offset,limit);
-        result.put("total", roleInfo.getTotal());
-        result.put("rows", roleInfo.getList());
+        Map roleInfo = StudentServiceImpl.getStudentList(name,school,grade,offset,limit);
+        result.put("total", roleInfo.get("total"));
+        result.put("rows", roleInfo.get("data"));
         return result;
     }
 
